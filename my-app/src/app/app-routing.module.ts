@@ -10,7 +10,9 @@ import {OnepostComponent} from './onepost/onepost.component';
 const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'posts',component:AllpostsComponent},
-  {path:'onepost',component:OnepostComponent}
+  {path:'posts/:id',component:OnepostComponent},
+  
+  
 ];
 
 @NgModule({

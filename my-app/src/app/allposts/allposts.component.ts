@@ -11,8 +11,6 @@ public posts=[]
   constructor(private getdata:ServerserviceService ) { }
 
   ngOnInit() {
-    this.getdata.getdata().subscribe(data => (this.posts = data ,console.log(this.posts)));
-    
+    this.getdata.getallposts().subscribe(data => (this.posts = data ,console.log(this.posts)));
   }
-
 }
