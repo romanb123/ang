@@ -6,7 +6,8 @@ import {Posts} from './modules/post';
   providedIn: 'root'
 })
 export class ServerserviceService {
-  private url="https://jsonplaceholder.typicode.com/posts/"
+  private url="http://localhost:3000/allposts"
+  private onepost="http://localhost:3000/onepost/"
 
   constructor(private http:HttpClient) { }
   getallposts():Observable<Posts[]>{
@@ -14,6 +15,6 @@ return this.http.get<Posts[]>(this.url);
   }
 
   getonepost(id):Observable<Posts[]>{
-    return this.http.get<Posts[]>(this.url+id);
+    return this.http.get<Posts[]>(this.onepost+id);
       }
 }

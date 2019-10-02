@@ -1,7 +1,6 @@
 <ul *ngFor="let post of posts">
-    <li>{{post.id}}</li>
-    <li>{{post.userId}}</li>
+    <li>{{post._id}}</li>
     <li>{{post.title}}</li>
     <li>{{post.body}}</li>
-    <a  [routerLink]="post.id">ddddddd</a>
+    <a  [routerLink]="post._id">ddddddd</a>
   </ul>

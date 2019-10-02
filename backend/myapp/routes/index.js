@@ -19,12 +19,12 @@ router.get('/allposts', function(req, res, next) {
 });
 
 // get onepost posts
-router.get('/onepost', function(req, res, next) {
+router.get('/onepost/:id', function(req, res, next) {
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("mydb");
     var ObjectId = require('mongodb').ObjectID;
-    dbo.collection("customers").find( {"_id":ObjectId("5d94a70040063a1920acb817")} ).toArray(function(err, result) {
+    dbo.collection("customers").find( {"_id":ObjectId(req.params.id)} ).toArray(function(err, result) {
       if (err) throw err;
       console.log(result);
       res.send(result);
